@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import PetList from './pages/PetList'
 import PetDetails from './pages/PetDetails'
 import PetForm from './pages/PetForm'
+import PetUpdateForm from './pages/PetUpdateForm'
 
 const App = () => {
   const [pets, setPets] = useState([])
@@ -26,7 +27,7 @@ const App = () => {
   return (
     <>
       <header>
-        <Nav />
+        <Nav /> 
       </header>
       <main>
         <Routes>
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/petlist" element={<PetList pets={pets} />} />
           <Route path="/petlist/:id" element={ <PetDetails pets={pets} /> } />
           <Route path="/new" element={ <PetForm pets={pets} setPets={setPets} /> } />
+          <Route path='/update/:id' element={<PetUpdateForm pets={pets} setPets={setPets} />} />
         </Routes>
       </main>
     </>
